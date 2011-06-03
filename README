@@ -1,1 +1,5 @@
 misc: Some useful c++ code that doesn't really fit anywhere else, but I include it in many of my projects.
+
+For example:
+	- list_with_constant_size.hpp
+		- Did you know that std :: list :: size can be O(N) on some implementations? http://stackoverflow.com/questions/228908/is-listsize-really-on
