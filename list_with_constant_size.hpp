@@ -9,9 +9,9 @@ namespace misc {
 template <typename T>
 struct list_with_constant_size : private std :: list<T> {
 	size_t sz;
-	typedef std :: list<T> :: const_iterator const_iterator;
-	typedef std :: list<T> :: iterator iterator;
-	typedef std :: list<T> :: const_reference const_reference;
+	typedef typename std :: list<T> :: const_iterator const_iterator;
+	typedef typename std :: list<T> :: iterator iterator;
+	typedef typename std :: list<T> :: const_reference const_reference;
 
 	explicit list_with_constant_size() : std :: list<T>(), sz(0) {
 	}
@@ -22,6 +22,10 @@ struct list_with_constant_size : private std :: list<T> {
 	void push_back(T v) {
 		++ sz;
 		this -> std :: list<T> :: push_back(v);
+	}
+	void push_front(T v) {
+		++ sz;
+		this -> std :: list<T> :: push_front(v);
 	}
 	size_t size() const {
 		// DON'T ENABLE THIS ASSERT, IT WOULD DEFEAT THE PURPOSE. Unless you're testing of course // assert (sz == this -> std :: list<T> :: size()) ;
