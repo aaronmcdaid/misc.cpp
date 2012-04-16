@@ -3,6 +3,7 @@
 
 #include <list>
 #include <stdint.h> // for int32_t
+#include <stddef.h>
 
 namespace misc {
 
